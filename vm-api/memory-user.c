@@ -12,11 +12,14 @@ int main(int argc, char* argv[]) {
 	// time for touching each part once.
 	int time = atoi(argv[2]);
 	int temp;
-
+	
 	char* array = (char*) malloc(memory_size);
 	memset(array, 0, memory_size);
 	clock_t begin = clock();
 	double time_spent;
+	char* test = (char*)malloc(1024 * 1024);
+	printf("malloc: %p\n", test);
+	printf("position = %p\n", array);
 	while (1) {
 		time_spent = (double) (clock() - begin) / CLOCKS_PER_SEC;
 		if (time_spent >= time) break;	
